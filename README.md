@@ -14,7 +14,7 @@ https://github.com/sakaicontrib/etudes-melete.git
 
 **Update Tomcat's context.xml**
 
-Edit the file conf/context.xml and add j4j.jar to the end of the tldscan in the <JarScanFilter tldscan="..., j4j.jar"/>
+Edit the file conf/context.xml and add j4j.jar to the end of the tldscan in the \<JarScanFilter tldscan="..., j4j.jar"/>
 
 **Configure Melete**
 
