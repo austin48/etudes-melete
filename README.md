@@ -12,6 +12,10 @@ Download the etudes-dependencies (which includes etudes-util and ltiContact) and
 https://github.com/austin48/etudes-dependencies.git
 https://github.com/sakaicontrib/etudes-melete.git
 
+**Update Tomcat's context.xml**
+
+Edit the file conf/context.xml and add j4j.jar to the end of the tldscan in the <JarScanFilter tldscan="..., j4j.jar"/>
+
 **Configure Melete**
 
 Packagingdir settings
@@ -67,12 +71,11 @@ melete.wysiwyg.editor2=CK Editor
 NOTE: Make sure that the names have proper spaces as this is used to display the labels of the available editors on the Preferences page.
 
  
-
 **Internationalize Messages (Optional)**
 
 If you want to run Melete in a different language than English, you need to update messages.properties of your language under melete-app/src/bundle and under melete-impl/src/bundle.
 
-Modify Sakai Distribution, Compile and Deploy
+**Modify Sakai Distribution, Compile and Deploy**
 Code Change for Oracle Users ONLY
 The Melete code uses the “straight_join” keyword for query optimization with a Mysql join. Oracle does not support this keyword. Please remove this keyword from melete/melete-impl/src/java/org/etudes/component/app/melete/ModuleDB.java.
 
