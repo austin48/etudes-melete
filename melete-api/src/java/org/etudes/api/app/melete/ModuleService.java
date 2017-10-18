@@ -191,7 +191,7 @@ public interface ModuleService
 	 *        The course Id
 	 * @return
 	 */
-	public int getCourseModuleSize(String courseId);
+	public long getCourseModuleSize(String courseId);
 
 	/**
 	 * Gets the earliest start date or end date(if defined) of all the modules. Returns null if dates don't exist 

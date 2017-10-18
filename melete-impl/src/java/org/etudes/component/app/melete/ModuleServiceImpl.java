@@ -231,7 +231,7 @@ public class ModuleServiceImpl implements ModuleService, Serializable
 	/**
 	 * {@inheritDoc}
 	 */
-	public int getCourseModuleSize(String courseId)
+	public long getCourseModuleSize(String courseId)
 	{
 		return moduledb.getCourseModuleSize(courseId);
 	}

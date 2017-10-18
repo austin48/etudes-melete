@@ -508,7 +508,7 @@ public class MeleteSiteAndUserInfo
 	private void setPage(String role)
 	{
 		FacesContext ctx = FacesContext.getCurrentInstance();
-		int sz = moduleService.getCourseModuleSize(getCurrentSiteId());
+		long sz = moduleService.getCourseModuleSize(getCurrentSiteId());
 
 		if (role.equals("INSTRUCTOR"))
 		{
