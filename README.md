@@ -155,18 +155,11 @@ b. If you add Melete to existing sites, users will not have the permissions that
 
 **Melete Portal Icon**
 
-If you are using sakai’s default cascading style sheet create the icons folder under tomcat/webapps/library/skin/default/
+Edit /reference/library/src/morpheus-master/sass/base/_icons.scss
 
-and copy the image modules-menu.png from melete-app/src/webapp/melete/images to
+add this to the #other tools section
 
-tomcat/webapps/library/skin/default/icons.
-
-Add the below line to tomcat/webapps/library/skin/default/portal.css
-
-.icon-sakai-melete
-{
-background-image: url(icons/modules-menu.png);
-}
+.icon-sakai--sakai-melete {                               @extend .fa-file-text-o; }
 
  
 
