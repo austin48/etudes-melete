@@ -27,10 +27,6 @@
 	<display-name>sakai-meleteAdmin</display-name>
 	<description>Etudes Melete Admin</description>
 	<context-param>
-		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
-		<param-value>server</param-value>
-	</context-param>
-	<context-param>
 		<param-name>com.sun.faces.validateXml</param-name>
 		<param-value>true</param-value>
 	</context-param>
