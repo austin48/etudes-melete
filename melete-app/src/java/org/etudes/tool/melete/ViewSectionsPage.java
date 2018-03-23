@@ -136,14 +136,6 @@ public class ViewSectionsPage implements Serializable
 		try
 		{
 			altText = resource.getProperties().getProperty(ResourceProperties.PROP_DESCRIPTION);
-			byte[] rsrcArray = resource.getContent();
-			str = new String(rsrcArray);
-
-			if (Util.FindNestedHTMLTags(str))
-			{
-				contentWithHtml = true;
-				return "";
-			}
 
 			// strip MS comments and bogus links
 			// strip bad link and meta tags
@@ -151,6 +143,15 @@ public class ViewSectionsPage implements Serializable
 			// only for html!
 			if (resource.getContentType().equalsIgnoreCase("text/html"))
 			{
+                byte[] rsrcArray = resource.getContent();
+                str = new String(rsrcArray);
+
+                if (Util.FindNestedHTMLTags(str))
+                {
+                    contentWithHtml = true;
+                    return "";
+                }
+
 				str = HtmlHelper.clean(str, false);
 				str = getSectionService().fixXrefs(str, getCourseId());
 			}

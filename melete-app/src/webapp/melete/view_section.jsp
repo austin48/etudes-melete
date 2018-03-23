@@ -150,7 +150,7 @@ if (modSeqNo != null)
  	<h:outputText id="contentFrame" rendered="#{(viewSectionsPage.section.contentType ==viewSectionsPage.typeLink)&&(viewSectionsPage.linkName !=
     viewSectionsPage.nullString)&&(viewSectionsPage.section.openWindow == false)}" escape="false">
 		<f:verbatim>
-		<iframe id="iframe1" name="iframe1" src="${viewSectionsPage.content}" title="${viewSectionsPage.linkName}" width="100%" height="700px" style="visibility:visible" scrolling= "auto" border="0" frameborder= "0">
+		<iframe id="iframe1" name="iframe1" src="${viewSectionsPage.contentLink}" title="${viewSectionsPage.linkName}" width="100%" height="700px" style="visibility:visible" scrolling= "auto" border="0" frameborder= "0">
 		</iframe>
 		</f:verbatim>
 	</h:outputText>
