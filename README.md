@@ -1,3 +1,9 @@
+# NEW
+- apply (temp?) fix for SAK38428
+- add this to local.properties or sakai.properties
+
+jsf.state_saving_method.sakai.melete=server
+
 # etudes-melete
 etudes melete tool (modules)
 
