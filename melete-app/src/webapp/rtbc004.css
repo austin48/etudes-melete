@@ -209,7 +209,7 @@ a1:active 			{color : #000080;}
 
  .ListAuthorDateClass {
    vertical-align:top;
-	width:1%;
+	width:190px;
 	font-size:85%;
    }
      
@@ -236,7 +236,7 @@ a1:active 			{color : #000080;}
 
 .ListActionClass {
 	vertical-align: top;    
-    width:6%;
+    width:108px;
   	white-space: nowrap;
   } 
   
