@@ -1993,7 +1993,7 @@ public class ModuleDB implements Serializable
 		{
 			Session session = hibernateUtil.currentSession();
 			Integer minsequence = 0;
-			Integer sectionCount = 0;
+			Long sectionCount = new Long(0);
 			Query q = session.createQuery(queryStr);
 			q.setParameter("courseId", courseId);
 			q.setParameter("currSeqNo", currSeqNo);
@@ -2002,7 +2002,7 @@ public class ModuleDB implements Serializable
 			{
 				 Object[] row = (Object[]) it.next();
 				 minsequence = (Integer) row[0];
-				 sectionCount = (Integer) row[1];
+				 sectionCount = (Long) row[1];
 				 if (sectionCount > 0) break;
 			}
 			// if no sequence is found then this is the last module
@@ -2199,7 +2199,7 @@ public class ModuleDB implements Serializable
 			Session session = hibernateUtil.currentSession();
 
 			Integer maxsequence = 0;
-			Integer sectionCount = 0;
+			Long sectionCount = new Long(0);
 			Query q = session.createQuery(queryStr);
 			q.setParameter("courseId", courseId);
 			q.setParameter("currSeqNo", currSeqNo);
@@ -2208,7 +2208,7 @@ public class ModuleDB implements Serializable
 			{
 				 Object[] row = (Object[]) it.next();
 				 maxsequence = (Integer) row[0];
-				 sectionCount = (Integer) row[1];
+				 sectionCount = (Long) row[1];
 				 if (sectionCount > 0) break;
 			}
 
