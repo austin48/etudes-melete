@@ -171,7 +171,7 @@ function resetAllMod()
                                     </f:facet> 
      	                            <h:selectBooleanCheckbox title="#{mdbean.module.moduleIdStr}" id="modCheck" value="#{mdbean.selected}" onclick="resetAllMod()" valueChangeListener="#{exportMeleteModules.selectedModule}" />
                                   </h:column>               
-                                 <h:column>
+                                  <h:column>
  	                                <f:facet name="header">
  	                                <h:panelGroup>
  	                                  <h:outputText id="t2" value="#{msgs.importexportmodules_modules_title}" />

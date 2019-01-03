@@ -195,7 +195,7 @@ function showHideTable(index, show)
              	 <f:converter converterId="melete.DateTimeConverter" />
   				 <f:attribute name="multiLine" value="true" />  
              </h:outputText>           
-          </h:column>
+           </h:column>
             <h:column>
               <f:facet name="header">
                 <h:outputText value="#{msgs.list_modules_inst_end_date}" />

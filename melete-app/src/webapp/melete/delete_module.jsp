@@ -64,7 +64,7 @@ function showProcessMessage()
                    <br><h:outputText value="#{msgs.delete_module_module2}" styleClass="bold"  rendered="#{deleteModulePage.moduleSelected}"/>  
 		     	   <h:outputText value=": " styleClass="bold"   rendered="#{deleteModulePage.moduleSelected}"/>
 				   <h:dataTable id="tablemod"  value="#{deleteModulePage.modules}"  var="module" rendered="#{deleteModulePage.moduleSelected && deleteModulePage.moduleSize > 0}">
-                       <h:column>
+                         <h:column>
 		                 <br><h:outputText value="#{module.title}" styleClass="bold"  rendered="#{deleteModulePage.moduleSelected}" />
                          </h:column>
                    </h:dataTable>   
@@ -72,7 +72,7 @@ function showProcessMessage()
                    <h:outputText value="Sections " styleClass="bold"  rendered="#{deleteModulePage.sectionSelected}"/> 
 				   <h:outputText value=": " styleClass="bold"   rendered="#{deleteModulePage.sectionSelected}"/> 
 				   <h:dataTable id="tablesec" value="#{deleteModulePage.sectionBeans}"  var="secbean" rendered="#{deleteModulePage.sectionSelected && deleteModulePage.sectionBeansSize > 0}">
-                    <h:column>
+                      <h:column>
 		                 <br>
 						<h:outputText value="#{secbean.section.module.title}" styleClass="bold" rendered="#{deleteModulePage.sectionSelected}" /><h:outputText value=": " styleClass="bold"  rendered="#{deleteModulePage.sectionSelected}" />
 						<h:outputText value="#{secbean.section.title}" styleClass="bold"  rendered="#{deleteModulePage.sectionSelected}" />
