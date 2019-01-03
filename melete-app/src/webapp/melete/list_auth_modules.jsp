@@ -174,7 +174,7 @@ if (msg != null)
 	   <h:selectBooleanCheckbox title="#{mdbean.module.moduleIdStr}" id="modCheck" value="#{mdbean.selected}" onclick="resetAllMod()" valueChangeListener="#{listAuthModulesPage.selectedModule}" />
      
     </h:column>               
-   <h:column>
+  <h:column>
  	<f:facet name="header">
  	 <h:panelGroup>
       <h:commandLink id="expandCollapseAction" action="#{listAuthModulesPage.expandCollapseAction}">
@@ -211,7 +211,7 @@ if (msg != null)
               </h:commandLink>
             </h:column>
           </h:dataTable>     
-        </h:column>      
+      </h:column>      
        <h:column>   
          <f:facet name="header">
              <h:outputText id="t4" value="#{msgs.list_auth_modules_start_date}" />
@@ -316,7 +316,7 @@ if (msg != null)
 		       	<h:graphicImage id="printImgLink" value="/images/printer.png" alt="#{msgs.list_auth_modules_alt_print}" title="#{msgs.list_auth_modules_alt_print}" styleClass="AuthImgClass"/>
 		  </h:outputLink>  	  	   
 		  </h:panelGrid>
-        </h:column>          
+      </h:column>          
     </h:dataTable>   
       <h:inputHidden id="listSize" value="#{listAuthModulesPage.listSize}"/>
       

@@ -141,7 +141,7 @@ function resetAllAcc()
      </f:facet>   
     <h:selectBooleanCheckbox id="accCheck" title="#{saObj.accessIdStr}" value="#{saObj.selected}" onclick="resetAllAcc()" valueChangeListener="#{specialAccessPage.selectedAccess}" />
      </h:column>               
-   <h:column>
+  <h:column>
  	<f:facet name="header">
  	 <h:panelGroup>
       <h:outputText id="t2" value="#{msgs.list_special_access_name}" />

@@ -116,7 +116,7 @@ function showHideTable(index, show)
         <h:dataTable id="tablesec" rendered="#{((vmbean.moduleId == listModulesPage.showModuleId)||(listModulesPage.expandAllFlag == listModulesPage.trueFlag))}"
                   value="#{vmbean.vsBeans}" 
                   var="vsbean" rowClasses="#{vmbean.rowClasses}" width="95%" binding="#{listModulesPage.secTable}" styleClass="secrow0" summary="#{msgs.list_modules_stud_sections_summary}">
-          <h:column> 
+        <h:column> 
   		
               <h:graphicImage id="bul_gif" value="/images/bullet_black.gif" rendered="#{!listModulesPage.autonumber}"/>             
 	          <h:outputText id="sec_seq" value="#{vsbean.displaySequence}. " rendered="#{listModulesPage.autonumber}"/>    
@@ -198,7 +198,7 @@ function showHideTable(index, show)
   				 <f:attribute name="multiLine" value="true" /> 
               </h:outputText>
                
-          </h:column>
+        </h:column>
       <h:column>
       <f:facet name="header">
         <h:panelGroup>
@@ -210,7 +210,7 @@ function showHideTable(index, show)
               	 <f:converter converterId="melete.DateTimeConverter" />
   				 <f:attribute name="multiLine" value="true" /> 
               </h:outputText>            
-         </h:column>
+       </h:column>
        <h:column>
       <f:facet name="header">
         <h:panelGroup>
@@ -222,7 +222,7 @@ function showHideTable(index, show)
               	 <f:converter converterId="melete.DateTimeConverter" />
   				 <f:attribute name="multiLine" value="true" /> 
               </h:outputText>         
-         </h:column>
+       </h:column>
  		 <h:column>
               <f:facet name="header">
                 <h:outputText value="#{msgs.list_modules_stud_viewed_date}" />
