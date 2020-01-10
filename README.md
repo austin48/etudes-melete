@@ -86,9 +86,9 @@ Code Change for Oracle Users ONLY
 The Melete code uses the “straight_join” keyword for query optimization with a Mysql join. Oracle does not support this keyword. Please remove this keyword from melete/melete-impl/src/java/org/etudes/component/app/melete/ModuleDB.java.
 
 
-Note: This version is configured to build with Sakai 13-SNAPSHOT. If you are using another version, you need to make a few changes. 
+Note: This version is configured to build with Sakai 19-SNAPSHOT. If you are using another version, you need to make a few changes. 
 
-The “13-SNAPSHOT” version number is in a few files, used as the version number for the Sakai base pom. You need to edit these files to change this to match the version of Sakai you are using: 
+The “19-SNAPSHOT” version number is in a few files, used as the version number for the Sakai base pom. You need to edit these files to change this to match the version of Sakai you are using: 
 
 etudes-util/pom.xml \
 ltiContact/pom.xml \
