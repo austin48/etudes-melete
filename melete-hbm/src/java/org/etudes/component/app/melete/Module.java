@@ -41,7 +41,7 @@ public class Module implements Serializable, ModuleObjService
 	/** persistent field */
 	private Date creationDate;
 
-	private Map deletedSections;
+	private Map<Integer, SectionObjService> deletedSections;
 
 	/** nullable persistent field */
 	private String description;
