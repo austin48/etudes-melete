@@ -639,12 +639,12 @@ public class MeleteSecurityServiceImpl implements MeleteSecurityService, EntityP
 		return toolIds;
 	}
 
-	public void transferCopyEntities(String fromContext, String toContext, List ids, boolean cleanup)
+	public Map<String, String> transferCopyEntities(String fromContext, String toContext, List<String> ids, List<String> transferOptions, boolean cleanup)
 	{
-		transferCopyEntities(fromContext, toContext, ids);
+		return transferCopyEntities(fromContext, toContext, ids, transferOptions);
 	}
 
-	public void transferCopyEntities(String fromContext, String toContext, List ids)
+	public Map<String, String> transferCopyEntities(String fromContext, String toContext, List<String> ids, List<String> transferOptions)
 	{
 		try
 		{
@@ -662,6 +662,8 @@ public class MeleteSecurityServiceImpl implements MeleteSecurityService, EntityP
 			e.printStackTrace();
 			logger.error(e.getMessage(), e);
 		}
+
+		return null;
 	}
 
 	public ModuleService getModuleService()
