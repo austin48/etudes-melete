@@ -3085,7 +3085,7 @@ else
 					session.update(newSR);
 					session.saveOrUpdate(section);
 					session.flush();
-					session.delete(old);
+					session.delete(session.merge(old));
 				}
 				tx.commit();
 
