@@ -214,7 +214,7 @@ public class MeleteScormExportServiceImpl extends MeleteAbstractExportServiceImp
                 //Rashmi - if no resources are written then see if createResourceElement needs a return type
                 Element resource = resources.addElement("resource");
                 resource.addAttribute("identifier","RESOURCE"+ item_ref_num);
-                resource.addAttribute("type ","webcontent");
+                resource.addAttribute("type","webcontent");
                 resource.addAttribute("adlcp:scormType","asset");
                 createResourceElement(section, resource, content_data1, resoucesDir, imagespath,null,(String)content_data.get(0),i);
                 secElement.addAttribute("identifierref", resource.attributeValue("identifier"));
@@ -239,7 +239,7 @@ public class MeleteScormExportServiceImpl extends MeleteAbstractExportServiceImp
             {
             	 Element resource = resources.addElement("resource");
                  resource.addAttribute("identifier","RESOURCE"+ item_ref_num);
-                 resource.addAttribute("type ","webcontent");
+                 resource.addAttribute("type","webcontent");
                  resource.addAttribute("adlcp:scormType","asset");
                  createResourceElement(section, resource, null, resoucesDir, imagespath,null,"nocontent.html",i);
                  secElement.addAttribute("identifierref", resource.attributeValue("identifier"));
@@ -306,6 +306,7 @@ public class MeleteScormExportServiceImpl extends MeleteAbstractExportServiceImp
                         catch(Exception e){
                             Section probSection = sectionDB.getSection(Integer.parseInt(currItem.getAttribute("id")));
                             probEncounteredSections += module.getTitle() +" section: "+ probSection.getTitle();
+                            logger.debug(e.getCause().toString());
                             logger.debug("problems found in impl" + probEncounteredSections);
                             throw new MeleteException(probEncounteredSections);
                         //  continue;
@@ -318,7 +319,7 @@ public class MeleteScormExportServiceImpl extends MeleteAbstractExportServiceImp
                     {
                 	 Element resource = resources.addElement("resource");
                      resource.addAttribute("identifier","RESOURCE"+ ++k);
-                     resource.addAttribute("type ","webcontent");
+                     resource.addAttribute("type","webcontent");
                      resource.addAttribute("adlcp:scormType","asset");
 
                      File resfile = new File(resoucesDir+ "/nocontent.html");
@@ -341,7 +342,7 @@ public class MeleteScormExportServiceImpl extends MeleteAbstractExportServiceImp
 
                     Element resource = resources.addElement("resource");
                     resource.addAttribute("identifier","RESOURCE"+ k);
-                    resource.addAttribute("type ","webcontent");
+                    resource.addAttribute("type","webcontent");
                     resource.addAttribute("adlcp:scormType","asset");
 
 //                  create the file
@@ -402,7 +403,7 @@ public class MeleteScormExportServiceImpl extends MeleteAbstractExportServiceImp
 					logger.debug("calling secContent from create section");
 					Element resource = resources.addElement("resource");
 					resource.addAttribute("identifier","MANAGERESOURCE"+ item_ref_num);
-	                resource.addAttribute("type ","webcontent");
+	                resource.addAttribute("type","webcontent");
 	                resource.addAttribute("adlcp:scormType","asset");
 	                byte[] content_data1 =setContentResourceData(content_resource_id,content_data);
 					String sectionFileName = (String)content_data.get(0);

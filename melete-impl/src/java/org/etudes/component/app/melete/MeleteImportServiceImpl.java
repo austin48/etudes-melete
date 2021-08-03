@@ -295,8 +295,11 @@ public class MeleteImportServiceImpl extends MeleteImportBaseImpl implements Mel
 				Element urlTitleElement = (Element) resElements.get(i);
 				if (urlTitleElement.getQualifiedName().equalsIgnoreCase("imsmd:title"))
 				{
-					urlTitle = urlTitleElement.selectSingleNode(".//imsmd:langstring").getText();
-					break;
+					Element node = (Element) urlTitleElement.selectSingleNode(".//imsmd:langstring");
+					if (node != null) { 
+						urlTitle = node.getText();
+						break;
+					}
 				}
 			}
 		}
@@ -330,8 +333,11 @@ public class MeleteImportServiceImpl extends MeleteImportBaseImpl implements Mel
 				Element resDescElement = (Element) resElements.get(i);
 				if (resDescElement.getQualifiedName().equalsIgnoreCase("imsmd:description"))
 				{
-					melResourceDescription = resDescElement.selectSingleNode(".//imsmd:langstring").getText();
-					break;
+					Element node = (Element) resDescElement.selectSingleNode(".//imsmd:langstring");
+					if (node != null) { 
+						melResourceDescription = node.getText();
+						break;
+					}
 				}
 			}
 		}
@@ -846,18 +852,24 @@ public class MeleteImportServiceImpl extends MeleteImportBaseImpl implements Mel
 
 				if (metaElement.getName().equals("description"))
 				{
-					String desc = metaElement.selectSingleNode(".//imsmd:langstring").getText();
-					module.setDescription(desc.trim());
-					descr = true;
+					Element nodeDesc = (Element) metaElement.selectSingleNode(".//imsmd:langstring");
+					if (nodeDesc != null ) {
+						String desc = nodeDesc.getText();
+						module.setDescription(desc.trim());
+						descr = true;
+					}
 				}
 
 				if (metaElement.getName().equals("keyword"))
 				{
-					String modkeyword = metaElement.selectSingleNode(".//imsmd:langstring").getText();
-					if (modkeyword != null)
-					{
-						module.setKeywords(modkeyword.trim());
-						keywords = true;
+					Element nodeKeyword = (Element) metaElement.selectSingleNode(".//imsmd:langstring");
+					if (nodeKeyword != null) {
+						String modkeyword = nodeKeyword.getText();
+						if (modkeyword != null)
+						{
+							module.setKeywords(modkeyword.trim());
+							keywords = true;
+						}
 					}
 				}
 			}
@@ -1045,8 +1057,11 @@ public class MeleteImportServiceImpl extends MeleteImportBaseImpl implements Mel
 
 				if (DescElement != null)
 				{
-					String instr = DescElement.selectSingleNode(".//imsmd:langstring").getText();
-					section.setInstr(instr.trim());
+					Element node = (Element) DescElement.selectSingleNode(".//imsmd:langstring");
+					if (node != null) {
+						String instr = node.getText();
+						section.setInstr(instr.trim());
+					}
 				}
 
 				// read license information
@@ -1057,9 +1072,12 @@ public class MeleteImportServiceImpl extends MeleteImportBaseImpl implements Mel
 				if (rightsElement != null)
 				{
 					Element licenseElement = rightsElement.element("description");
-					String licenseUrl = licenseElement.selectSingleNode(".//imsmd:langstring").getText();
-					if (licenseUrl != null) buildLicenseInformation(meleteResource, licenseUrl);
-					sectionCopyrightFlag = true;
+					Element nodeLic = (Element) licenseElement.selectSingleNode(".//imsmd:langstring");
+					if (nodeLic != null) {
+						String licenseUrl = nodeLic.getText();
+						if (licenseUrl != null) buildLicenseInformation(meleteResource, licenseUrl);
+						sectionCopyrightFlag = true;
+					}
 				}
 			}
 			// license end
@@ -1434,7 +1452,12 @@ public class MeleteImportServiceImpl extends MeleteImportBaseImpl implements Mel
 			if (eleOrg != null)
 			{
 				// logger.debug("got desc element" + eleOrg.toString());
-				return eleOrg.selectSingleNode(".//imsmd:langstring").getText();
+				Element node = (Element) eleOrg.selectSingleNode(".//imsmd:langstring");
+				if (node != null) {
+					return node.getText();
+				} else {
+					return null;
+				}
 			}
 			else
 				return null;
