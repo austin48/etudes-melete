@@ -133,7 +133,7 @@ public class MeleteExportServiceImpl extends MeleteAbstractExportServiceImpl imp
 		}
 		else if (section.getContentType().equals("typeLTI"))
 		{
-			resource.addAttribute("type ", "BasicLTI");
+			resource.addAttribute("type", "BasicLTI");
 			// Remove the x-secure sections of the descriptor before export
 			try
 			{
@@ -219,7 +219,7 @@ public class MeleteExportServiceImpl extends MeleteAbstractExportServiceImpl imp
 			// Rashmi - if no resources are written then see if createResourceElement needs a return type
 			Element resource = resources.addElement("resource");
 			resource.addAttribute("identifier", "RESOURCE" + item_ref_num);
-			resource.addAttribute("type ", "webcontent");
+			resource.addAttribute("type", "webcontent");
 			createResourceElement(section, resource, content_data1, resoucesDir, imagespath, content_resource_id, (String) content_data.get(0),
 					item_ref_num);
 
@@ -327,7 +327,7 @@ public class MeleteExportServiceImpl extends MeleteAbstractExportServiceImpl imp
 
 					Element resource = resources.addElement("resource");
 					resource.addAttribute("identifier", "NEXTSTEPS_RESOURCE" + k);
-					resource.addAttribute("type ", "webcontent");
+					resource.addAttribute("type", "webcontent");
 
 					// create the file
 					File resfile = new File(resoucesDir + "/module_" + i + "_nextsteps.html");
@@ -403,7 +403,7 @@ public class MeleteExportServiceImpl extends MeleteAbstractExportServiceImpl imp
 
 				Element resource = resources.addElement("resource");
 				resource.addAttribute("identifier", "MANAGERESOURCE" + item_ref_num);
-				resource.addAttribute("type ", "webcontent");
+				resource.addAttribute("type", "webcontent");
 
 				byte[] content_data1 = setContentResourceData(content_resource_id, content_data);
 				String sectionFileName = (String) content_data.get(0);
