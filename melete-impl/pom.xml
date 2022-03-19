@@ -90,8 +90,8 @@
     </dependency>
 <!-- for hibernate -->
     <dependency>
-      <groupId>${sakai.hibernate.groupId}</groupId>
-      <artifactId>${sakai.hibernate.artifactId}</artifactId>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
       <version>${sakai.hibernate.version}</version>
     </dependency>
     <dependency>
