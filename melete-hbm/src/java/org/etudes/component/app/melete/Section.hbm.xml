@@ -30,7 +30,7 @@
 <hibernate-mapping>
   <class name="org.etudes.component.app.melete.Section" table="melete_section" >
  <id name="sectionId" column="SECTION_ID" type="int" unsaved-value="null">
-      <generator class="hilo"/>
+      <generator class="increment"/>
     </id>
      <!--many to one module id many to one or foreign key-->
 	 <version name="version" column="VERSION" />   

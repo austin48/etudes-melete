@@ -30,7 +30,7 @@
 <hibernate-mapping>
   <class name="org.etudes.component.app.melete.SpecialAccess" table="melete_special_access">
   <id name="accessId" column="ACCESS_ID" type="int" unsaved-value="null">
-      <generator class="hilo"/>
+      <generator class="increment"/>
     </id> 
        <property name="moduleId" column="MODULE_ID"  type="int"  not-null="true"/>
 	    <many-to-one name="module" class="org.etudes.component.app.melete.Module" insert="false" update="false" column="MODULE_ID" lazy="false"/>

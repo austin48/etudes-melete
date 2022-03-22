@@ -30,7 +30,7 @@
 <hibernate-mapping>
   <class name="org.etudes.component.app.melete.Bookmark" table="melete_bookmark">
   <id name="bookmarkId" column="BOOKMARK_ID" type="int" unsaved-value="null">
-      <generator class="hilo"/>
+      <generator class="increment"/>
     </id> 
        <property name="sectionId" column="SECTION_ID"  type="int"  not-null="true"/>
        <property name="userId" column="USER_ID" type="string" length="99">

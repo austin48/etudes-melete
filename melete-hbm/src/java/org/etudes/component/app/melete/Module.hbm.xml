@@ -30,7 +30,7 @@
 <hibernate-mapping>
   <class name="org.etudes.component.app.melete.Module" table="melete_module"><!--dynamic-update="true"-->
     <id name="moduleId" column="MODULE_ID" type="int" unsaved-value="null">
-      <generator class="hilo"/>
+      <generator class="increment"/>
     </id>
     <version name="version" column="VERSION" />
      <property name="title" column="TITLE" type="string"  length="255" not-null="true"/>
